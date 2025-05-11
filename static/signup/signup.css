@@ -1,0 +1,103 @@
+
+
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to right, #c2f0f7, #005c97);
+
+    height: 100vh;
+    overflow: hidden;
+}
+
+.logo-wrapper {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.logo-wrapper img {
+    width: 90px;
+}
+
+.signup-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.form-card {
+    background: #619cb7;
+    padding: 40px 30px;
+    border-radius: 30px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 20px 45px rgba(0,0,0,0.3);
+}
+
+.illustration {
+    width: 120px;
+    max-width: 160px;
+    margin-bottom: 20px;
+}
+
+.form-card h2 {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 25px;
+    color: #000;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.input-row {
+    display: flex;
+    gap: 5px;
+}
+
+.input-row input {
+    flex: 1;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    background-color: #d9d9d9;
+    font-size: 14px;
+}
+
+.btn-create {
+    margin-top: 10px;
+    padding: 10px;
+    background:  #ffffff;
+    color:#005c97;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn-create:hover {
+    opacity: 0.95;
+}
+
+.signin-text {
+    margin-top: 12px;
+    font-size: 14px;
+}
+
+.signin-text a {
+    color: black;
+    font-weight: 600;
+    text-decoration: none;
+}

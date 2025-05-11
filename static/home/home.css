@@ -1,0 +1,174 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #FFFAF0;
+}
+
+.home-container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+
+.left-section {
+  flex: 1;
+  padding: 40px 60px;
+  background-color: #FFFAF0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  background: linear-gradient(to bottom right, #FFFAF0, #FFFAF0);
+}
+
+.logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 90px;
+}
+
+.left-section h2 {
+  font-size: 50px;
+  color: #FF0000;
+  margin-bottom: 8px;
+  text-align: left;
+position: relative;
+  top:100px;
+  left:20px;
+}
+
+.left-section h1 {
+  font-size: 72px;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 12px;
+  text-align: left;
+
+position: relative;
+  top:100px;
+  left:20px;
+}
+
+.left-section h3 {
+  font-size: 58px;
+  color: #000;
+    font-weight: normal;
+  text-align: left;
+
+position: relative;
+  top:100px;
+  left:20px;
+}
+
+.group-img {
+  margin-top: 20px;
+  width: 150%;
+  max-width: 480px;
+}
+
+
+.right-section {
+  flex: 1;
+  padding: 40px 60px;
+  background: linear-gradient(to bottom right,#ffffff, #80B2D0, #619DC3);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.food-img-wrapper {
+  margin-bottom: 40px;
+
+}
+
+.food-img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 50%;
+    position: absolute;
+    top:7%;
+  right :4%;
+  border: 1px solid white;
+}
+
+.text-content h1 {
+  font-size: 64px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #000;
+  text-align: left;
+  position: relative;
+  top:50px;
+  left:20px;
+}
+
+.text-content h1 span {
+  color: #FF0000;
+}
+
+.text-content p {
+  font-size: 14px;
+  line-height: 1.6;
+  max-width: 500px;
+  color: #333;
+  text-align: left;
+  position: relative;
+  top:50px;
+  left:20px;
+}
+
+.text-content p strong{
+   color: #FF0000;
+}
+
+
+
+.btn-group {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+  position: relative;
+  top:50px;
+  left:20px;
+}
+
+.btn {
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-signup {
+  background-color: #fff;
+  color: #FF0000;
+  border: 2px solid #FF0000;
+}
+
+.btn-signup:hover {
+  background-color: #FF0000;
+  color: #fff;
+}
+
+.btn-signin {
+  background-color: transparent;
+  color: #000;
+  border: 2px solid #000;
+}
+
+.btn-signin:hover {
+  background-color: #000;
+  color: white;
+}

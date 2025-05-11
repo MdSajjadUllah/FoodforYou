@@ -1,0 +1,27 @@
+{% load static %}
+{% block content %}
+    <link rel="stylesheet" href="{% static 'contact/contact.css' %}">
+<div class="container">
+    <div class="contact-header">
+        <h1>Contact Us</h1>
+        <img src="{% static 'contact/hand.png' %}" alt="Hand Pointing">
+    </div>
+    <div class="contact-info">
+        <div class="info-box">
+            <img src="https://cdn-icons-png.flaticon.com/512/1008/1008015.png" alt="Office Icon" class="icon">
+            <h3>Corporate office</h3>
+            <p>10\Opposite of Govt. science<br>college, farmgate, dhaka - 1215</p>
+        </div>
+        <div class="info-box">
+            <img src="https://cdn-icons-png.flaticon.com/512/597/597177.png" alt="Phone Icon" class="icon">
+            <h3>Hotline</h3>
+            <p>+8801611780295</p>
+        </div>
+        <div class="info-box">
+            <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" alt="Email Icon" class="icon">
+            <h3>Email</h3>
+            <p>01fahim84@gmail.com</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

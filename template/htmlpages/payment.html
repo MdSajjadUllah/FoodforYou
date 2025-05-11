@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+ body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to right, #c2f0f7, #005c97);
+
+    height: 100vh;
+    overflow: hidden;
+     display: flex;
+justify-content: center;
+align-items: center;
+
+
+}
+
+  .payment-container {
+    max-width: 500px;
+    margin: 80px auto;
+    padding: 30px;
+    background: #FFFAF0;
+    border-radius: 16px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  }
+
+  .payment-container h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ff4d4d;
+    margin-bottom: 10px;
+  }
+
+  .payment-container p {
+    font-size: 1.1rem;
+    color: #444;
+    margin-bottom: 20px;
+  }
+
+  label {
+    font-weight: bold;
+    color: #222;
+  }
+
+  input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin: 6px 0 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+  }
+
+  button {
+    background-color: #ff4d4d;
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+
+  .error {
+    color: red;
+    margin-bottom: 10px;
+  }
+
+  .success {
+    color: green;
+    margin-bottom: 10px;
+  }
+</style>
+
+<div class="payment-container">
+  <h1>Payment </h1>
+  <p>Fill in either your Bkash or Nagad number to continue.</p>
+
+  {% if messages %}
+    {% for message in messages %}
+      <div class="{{ message.tags }}">{{ message }}</div>
+    {% endfor %}
+  {% endif %}
+
+  <form method="POST">
+    {% csrf_token %}
+    <label for="bkash_number">Bkash Number:</label>
+    <input type="text" id="bkash_number" name="bkash_number" value="{{ user.profile.bkash_number|default:'' }}">
+
+    <label for="nagad_number">Nagad Number:</label>
+    <input type="text" id="nagad_number" name="nagad_number" value="{{ user.profile.nagad_number|default:'' }}">
+
+    <button type="submit">Save</button>
+  </form>
+</div>
+{% endblock %}

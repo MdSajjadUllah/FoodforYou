@@ -1,0 +1,13 @@
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'history/history.css' %}">
+<script src="{% static 'history/history.js' %}"></script>
+
+
+<div class="history-container">
+    <h2>Order History</h2>
+    <div id="order-list">
+        <!-- Orders will be inserted here by JavaScript -->
+    </div>
+</div>
+{% endblock %}

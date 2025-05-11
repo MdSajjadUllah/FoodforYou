@@ -1,0 +1,37 @@
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'checkout/checkout.css' %}">
+
+<!-- Define orderConfirmationUrl here -->
+<script>
+    var orderConfirmationUrl = "{% url 'order_confirmation' %}";
+</script>
+
+<script src="{% static 'checkout/checkout.js' %}"></script>
+
+
+<div class="checkout-container">
+    <h2>Delivery address</h2>
+
+    <div class="map-container">
+        <img src="{% static 'checkout/map.png' %}" alt="Map" class="map-image">
+    </div>
+
+    <form id="checkout-form">
+        <input type="text" id="street" name="street" placeholder="Street / House Number" required>
+        <input type="text" id="apartment" name="apartment" placeholder="Apartment #" required>
+        <input type="text" id="full_location" name="full_location" placeholder="Full location" required>
+
+        <div class="payment-method">
+            <label for="paymentMethod">Payment Method :</label>
+            <select id="paymentMethod" name="payment_method" required>
+                <option value="Cash on Delivery">Cash on delivery</option>
+                <option value="Bkash">Bkash</option>
+                <option value="Nagad">Nagad</option>
+            </select>
+        </div>
+
+        <button type="submit" class="confirm-btn">Confirm Order</button>
+    </form>
+</div>
+{% endblock %}

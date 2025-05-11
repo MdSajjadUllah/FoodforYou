@@ -1,0 +1,154 @@
+.history-container {
+    width: 95%;
+    max-width: 600px; /* Smaller outer box */
+    margin: 40px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    border: 1px solid #ddd;
+}
+
+
+
+/* Order list - centers inner boxes */
+#order-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* center inner boxes */
+}
+
+/* Individual order box */
+.order-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* left align content */
+    text-align: left;
+    justify-content: center;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    background-color: #FFFAF0;
+    border-left: 5px solid #80B2D0;
+    transition: transform 0.3s ease-in-out;
+    width: 90%;
+    max-width: 450px; /* smaller inner box */
+}
+
+/* Order box hover */
+.order-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+/* Header text */
+.order-item h3 {
+    font-size: 20px;
+    color: #80B2D0;
+    margin-bottom: 10px;
+}
+
+/* Paragraphs and list */
+.order-item p,
+.order-item ul,
+.order-item li,
+.order-item .total {
+    text-align: left;
+    margin-bottom: 6px;
+    color: #444;
+    font-size: 15px;
+}
+
+
+/* Body style */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to right, #c2f0f7, #005c97);
+
+
+}
+
+
+
+/* Header */
+.history-container h2 {
+    margin-bottom: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    color: #005c97;
+    border-bottom: 2px solid #80B2D0; /* Green border to highlight the header */
+    padding-bottom: 10px;
+}
+
+/* Order item styles */
+.order-item {
+    background-color: #FFFAF0; /* Slight gray background for each order card */
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    border-left: 5px solid #80B2D0; /* Green left border for emphasis */
+    transition: transform 0.3s ease-in-out; /* Smooth hover effect */
+}
+
+/* Hover effect on order items */
+.order-item:hover {
+    transform: translateY(-5px); /* Lift effect */
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1); /* Slight shadow when hovered */
+}
+
+/* Title of each order */
+.order-item h3 {
+    font-size: 22px;
+    color: #80B2D0; /* Green color for the order title */
+    margin-bottom: 10px;
+}
+
+/* Text styling for order details */
+.order-item p {
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+/* Styling for the items list */
+.order-item ul {
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+.order-item li {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+/* Bold text for important information */
+.order-item strong {
+    color: #333;
+    font-weight: bold;
+}
+
+/* Styling for total price */
+.order-item .total {
+    font-size: 18px;
+    font-weight: bold;
+    color: #80B2D0; /* Green color for the total amount */
+    margin-top: 15px;
+}
+
+/* Empty history message */
+#order-list p {
+    font-size: 18px;
+    text-align: center;
+    color: #888;
+}
+
+/* Styling the list items in a cleaner way */
+ul {
+    list-style-type: none;
+    padding: 0;
+}

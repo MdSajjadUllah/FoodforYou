@@ -1,0 +1,122 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(to right, #c2f0f7, #005c97); /* soft sky blue to light aqua */
+    min-height: 100vh;
+}
+
+
+
+
+.form-card {
+     background: #619cb7;/* Highlighted blue for the form box */
+    padding: 40px 30px;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.3); /* Strong shadow */
+    color: #fff;
+}
+
+
+
+.logo-wrapper img {
+    width: 90px; /* keep it as before */
+}
+
+.logo-wrapper {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+
+.signin-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+
+.illustration {
+    width: 100%;
+    max-width: 150px;
+    margin-bottom: 20px;
+}
+
+.form-card h2 {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 25px;
+    color: #000;
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    background: #e8e8e8;
+}
+
+form input:focus {
+    outline: 2px solid #005c97;
+}
+
+.forgot-password {
+    text-align: right;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.forgot-password a {
+    color: #000;
+    text-decoration: none;
+}
+
+.btn-signin {
+    width: 100%;
+    background-color: #fff;
+    color: #005c97;
+    border: 2px solid #005c97;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-signin:hover {
+    background-color: #005c97;
+    color: #fff;
+}
+
+.signup-text {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #000;
+}
+
+.signup-text a {
+    font-weight: bold;
+    color: #000;
+    text-decoration: none;
+}
+
+.signup-text a:hover {
+    color: #FF0000;
+}
+
+

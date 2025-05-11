@@ -1,0 +1,68 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'restaurant_detail/restaurant_detail.css' %}">
+
+<div class="cart-page">
+    <div class="cart" id="cart">
+        <h3>Cart</h3>
+        <ul id="cart-items"></ul>
+        <p>Total: ৳ <span id="cart-total">0</span></p>
+        <button onclick="goToCheckout()">Proceed to Checkout</button>
+    </div>
+</div>
+<style>
+    body {
+
+    font-family: 'Poppins', sans-serif;
+  background:  #FFFAF0;
+
+
+}
+.cart-page {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* or center if you want full vertical centering */
+    min-height: 80vh; /* to give some height */
+    padding-top: 50px;
+}
+
+.cart {
+    width: 350px;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+</style>
+
+<script>
+
+document.addEventListener('DOMContentLoaded', function() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || {};
+    const cartList = document.getElementById('cart-items');
+    const cartTotal = document.getElementById('cart-total');
+    let total = 0;
+    cartList.innerHTML = '';
+
+    Object.keys(cart).forEach(id => {
+        const item = cart[id];
+        const li = document.createElement('li');
+        li.innerHTML = `${item.name} (x${item.quantity}) - ৳${(item.price * item.quantity).toFixed(2)}
+            <button onclick="removeItem(${id})">🗑️</button>`;
+        cartList.appendChild(li);
+        total += item.price * item.quantity;
+    });
+
+    cartTotal.textContent = total.toFixed(2);
+});
+
+function removeItem(id) {
+    const cart = JSON.parse(localStorage.getItem('cart')) || {};
+    delete cart[id];
+    localStorage.setItem('cart', JSON.stringify(cart));
+    location.reload(); // Reload page to update cart
+}
+
+function goToCheckout() {
+    window.location.href = "/checkout/";
+}
+</script>

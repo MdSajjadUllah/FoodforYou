@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'confirmation/confirmation.css' %}">
+
+<div class="logo-wrapper">
+    <img src="{% static 'images/food_logo.png' %}" alt="Logo">
+</div>
+
+<div class="confirmation-container">
+    <div class="form-card">
+        <img src="{% static 'confirmation/confirmation.png' %}" alt="Success" class="illustration">
+        <h2>Account Verified!</h2>
+        <p class="info-text">Your account has been successfully verified. You can now sign in and start ordering your favorite meals.</p>
+        <a href="{% url 'signin' %}" class="btn-confirm">Go to Sign In</a>
+    </div>
+</div>
+{% endblock %}

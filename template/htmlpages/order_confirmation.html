@@ -1,0 +1,9 @@
+{% load static %}
+{% block content %}
+    <link rel="stylesheet" href="{% static 'order_confirmation/order_confirmation.css' %}">
+<div class="confirmation-container">
+    <img src="{% static 'order_confirmation/tick.png' %}" alt="Order Confirmed" class="tick-image">
+    <h2>Your order has been successfully placed!</h2>
+    <button onclick="window.location.href='{% url 'dashboard' %}'" class="home-btn">Return to Dashboard</button>
+</div>
+{% endblock %}

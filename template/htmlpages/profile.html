@@ -1,0 +1,18 @@
+
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'profile/profile.css' %}">
+<div class="profile-box">
+  <h1>Profile</h1>
+  <p><strong>Name:</strong> {{ user.username }}</p>
+  <p><strong>Email:</strong> {{ user.email }}</p>
+
+  {% if user.profile.bkash_number %}
+    <p><strong>Bkash Number:</strong> {{ user.profile.bkash_number }}</p>
+  {% endif %}
+  {% if user.profile.nagad_number %}
+    <p><strong>Nagad Number:</strong> {{ user.profile.nagad_number }}</p>
+  {% endif %}
+</div>
+
+{% endblock %}

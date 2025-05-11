@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'services/services.css' %}">
+
+<div class="background-wrapper">
+
+  <div class="left-bg">
+
+    <div class="logo-container">
+      <img src="{% static 'images/food_logo.png' %}" alt="Logo" class="logo">
+    </div>
+  </div>
+
+
+  <div class="right-bg"></div>
+
+
+  <div class="main-content">
+    <div class="help-box">
+
+
+      <div class="help-header">
+          <p class="services-label">Services</p>
+        <h1 class="help-title">Help center</h1>
+          <div class="header-wrapper">
+        <div class="search-bar-container">
+          <input type="text" placeholder="Search our help articles">
+          <span class="search-icon">🔍</span>
+        </div>
+      </div>
+
+      </div>
+
+      <div class="question-box">
+        <ul>
+          <li>How do I report an issue/complain?</li>
+          <li>My app is not working. What should I do?</li>
+          <li>Can I change or cancel my order after placing it?</li>
+          <li>How can I get a promo code?</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

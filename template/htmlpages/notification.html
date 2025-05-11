@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+
+.notification-container {
+  background: linear-gradient(to right, #c2f0f7, #005c97);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin: 0;
+  padding: 0; /* remove padding to avoid offset */
+  overflow: auto;
+}
+
+
+
+.notification-box {
+   background: #FFFAF0; /* your requested box color */
+  max-width: 600px;
+  width: 100%;
+  padding: 30px 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  transition: transform 0.3s ease;
+}
+
+.notification-box:hover {
+  transform: scale(1.02);
+}
+
+.notification-box h1 {
+  color: #005c97;
+  font-size: 2.5rem;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.notification-item {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 16px 20px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  color: #fefefe;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.no-notifications {
+  color: #000;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  padding-top: 20px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+</style>
+
+<div class="notification-container">
+  <div class="notification-box">
+    <h1>Notifications</h1>
+
+    {% if notifications %}
+      <ul style="list-style: none; padding: 0; margin: 0;">
+        {% for notification in notifications %}
+          <li class="notification-item">
+            🔔 {{ notification.message }}
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p class="no-notifications">
+        🍽️ No new notifications right now.<br>
+        Thank you for staying with us — we’ll let you know when something delicious happens!
+      </p>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

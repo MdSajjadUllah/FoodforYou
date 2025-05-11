@@ -1,0 +1,112 @@
+
+{% load static %}
+
+{% block content %}
+
+    <link rel="stylesheet" href="{% static 'dashboard/dashboard.css' %}">
+
+
+
+    <div class="topbar">
+        <img src="{% static 'images/food_logo.png' %}" class="logo" alt="">
+        <form method="GET" action="{% url 'search' %}">
+    <label for="searchInput">
+        <input type="text" id="searchInput" class="search-bar" name="q" placeholder="Search for restaurants, cuisines, and dishes">
+    </label>
+</form>
+
+        <div class="profile-icon" onclick="toggleProfileMenu()">👤</div>
+        <div class="profile-menu" id="profileMenu">
+            <a href="{% url 'profile' %}">Profile</a>
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'notification' %}">Notification</a>
+            <a href="{% url 'payment' %}">Payment</a>
+            <a href="{% url 'history' %}">History</a>
+            <a href="{% url 'services' %}">Services</a>
+            <a href="{% url 'contact' %}">Contact</a>
+            <a href="{% url 'logout' %}">Log Out</a>
+        </div>
+    </div>
+
+
+    <div class="sidebar">
+        <h3>Filters</h3>
+        <p><strong>Sort by</strong></p>
+        <ul>
+            <li>Breakfast</li>
+            <li>Lunch</li>
+            <li>Evening snacks</li>
+        </ul>
+        <p><strong>Cuisines</strong></p>
+        <ul>
+            <li>Biryani</li>
+            <li>Burger</li>
+            <li>Pizza</li>
+            <li>Chicken</li>
+        </ul>
+    </div>
+
+
+    <div class="main-content">
+
+        <div class="banner">New: Spend over 2000tk in a week for 20% off next order</div>
+        <div class="featured">
+            <h2>Get 15% off</h2>
+            <div class="scroll-cards">
+                {% for rest in featured_restaurants %}
+                    <div class="card">
+                        <img src="{{ rest.image.url }}" alt="">
+                        <h4>{{ rest.name }}</h4>
+                        <p>⭐ {{ rest.rating }} ({{ rest.reviews }}+)</p>
+                        <p>{{ rest.delivery_time }} | {{ rest.offer }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+
+        <h2>Your Daily Deals</h2>
+        <div class="deals">
+            {% for deal in deals %}
+                <div class="deal-card">
+                    <img src="{{ deal.image.url }}" alt="">
+                    <p>{{ deal.offer_text }}</p>
+                </div>
+            {% endfor %}
+        </div>
+
+
+        <h2>Your favourite cuisines</h2>
+        <div class="cuisines">
+            {% for cuisine in cuisines %}
+                <div class="cuisine-card">
+                    <img src="{{ cuisine.image.url }}" alt="">
+                    <p>{{ cuisine.name }}</p>
+                </div>
+            {% endfor %}
+        </div>
+
+
+        <h2>All Restaurants</h2>
+        <div class="restaurant-grid">
+    {% for rest in all_restaurants %}
+        <a href="{% url 'restaurant_detail' rest.id %}" class="rest-card-link">
+            <div class="rest-card">
+                <img src="{{ rest.image.url }}" alt="">
+                <h4>{{ rest.name }}</h4>
+                <p>⭐ {{ rest.rating }} ({{ rest.reviews }}+)</p>
+                <p>{{ rest.delivery_time }} | {{ rest.offer }}</p>
+            </div>
+        </a>
+    {% endfor %}
+</div>
+
+    </div>
+
+<script>
+    function toggleProfileMenu() {
+        document.getElementById("profileMenu").classList.toggle("show");
+    }
+</script>
+
+{% endblock %}

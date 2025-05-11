@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'signup/signup.css' %}">
+
+<div class="logo-wrapper">
+    <img src="{% static 'images/food_logo.png' %}" alt="Logo">
+</div>
+
+<div class="signup-container">
+    <div class="form-card">
+        <img src="{% static 'signup/signup.png' %}" alt="Sign Up Illustration" class="illustration">
+
+        <h2>Sign up</h2>
+
+        <form method="POST">
+            {% csrf_token %}
+            <div class="input-row">
+
+                    <input type="text" name="username" placeholder="User name" required>
+
+                    <input type="text" name="phone" placeholder="Phone Number" required>
+
+            </div>
+            <div class="input-row">
+
+                    <input type="email" name="email" placeholder="Email" required>
+
+
+            </div>
+
+                <input type="password" name="password1" placeholder="Password" required>
+
+
+                <input type="password" name="password2" placeholder="Confirm Password" required>
+
+
+            <button type="submit" class="btn-create">Create Account</button>
+        </form>
+
+        <p class="signin-text">Already have an Account, <a href="{% url 'signin' %}"><strong>Sign in</strong></a></p>
+    </div>
+</div>
+{% endblock %}

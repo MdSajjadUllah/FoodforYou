@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Search Results for "{{ query }}"</h2>
+
+    {% if results %}
+        <div class="restaurant-grid">
+            {% for rest in results %}
+                <div class="rest-card">
+                    <img src="{{ rest.image.url }}" alt="">
+                    <h4>{{ rest.name }}</h4>
+                    <p>⭐ {{ rest.rating }} ({{ rest.reviews }}+)</p>
+                    <p>{{ rest.delivery_time }} | {{ rest.offer }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>No restaurants found for "{{ query }}".</p>
+    {% endif %}
+{% endblock %}

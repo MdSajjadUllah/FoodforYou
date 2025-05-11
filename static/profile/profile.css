@@ -1,0 +1,48 @@
+body {
+    margin: 0;
+  background: linear-gradient(to right, #c2f0f7, #005c97);
+    height: 100vh;
+    overflow: hidden;
+   display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(to right, #c2f0f7, #005c97);
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-box {
+  width: 90%;
+  max-width: 500px;
+  padding: 30px;
+   background: #FFFAF0;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  color: #333;
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px; /* Larger font size */
+}
+
+.profile-box h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #005c97;
+  font-size: 2.5rem; /* Keep the large font size for heading */
+}
+
+.profile-box p {
+  margin-bottom: 12px;
+  font-size: 18px; /* Increase font size for paragraphs */
+}
+
+.profile-box strong {
+  color: #000;
+}
+

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'home/home.css' %}">
+
+<div class="home-container">
+    <div class="left-section">
+        <img src="{% static 'images/food_logo.png' %}" alt="Food for You Logo" class="logo">
+        <h2>Taste the Freshness</h2>
+        <h1>Fast Delivery</h1>
+        <h3>Just for You!</h3>
+        <img src="{% static 'home/food_people.png' %}" alt="People with food" class="group-img">
+    </div>
+    <div class="right-section">
+        <div class="food-img-wrapper">
+            <img src="{% static 'home/food_plate.png' %}" alt="Food" class="food-img">
+        </div>
+        <div class="text-content">
+            <h1>Get Your <span>Favourite</span> One</h1>
+            <p>Welcome to <strong>“Food for You”</strong>, the ultimate food experience at your fingertips! Whether you're craving comfort food or exploring new cuisines, we bring your favorite meals to your door with just a tap. We are passionate about food, and we're dedicated to making every bite unforgettable.</p>
+            <div class="btn-group">
+                <a href="{% url 'signup' %}" class="btn btn-signup">Sign Up</a>
+                <a href="{% url 'signin' %}" class="btn btn-signin">Sign In</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
